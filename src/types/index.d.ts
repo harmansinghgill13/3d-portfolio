@@ -20,7 +20,7 @@ export type TTestimonial = {
 
 export type TProject = {
   description: string;
-  tags: {
+  tags?: {
     name: string;
     color: string;
   }[];

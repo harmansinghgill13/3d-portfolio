@@ -6,6 +6,8 @@ import { navLinks } from "../../constants";
 import { logo, menu, close } from "../../assets";
 import { config } from "../../constants/config";
 
+import { FaInstagram, FaYoutube, FaLinkedin } from "react-icons/fa";
+
 const Navbar = () => {
   const [active, setActive] = useState<string | null>();
   const [toggle, setToggle] = useState(false);
@@ -65,7 +67,7 @@ const Navbar = () => {
           }}
         >
           <img src={logo} alt="logo" className="h-9 w-9 object-contain" />
-          <p className="flex cursor-pointer text-[18px] font-bold text-white ">
+          <p className="flex cursor-pointer text-[18px] font-bold text-white">
             {config.html.title}
           </p>
         </Link>
@@ -82,6 +84,31 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
+
+        {/* Social links - Desktop */}
+        <div className="hidden sm:flex gap-4">
+          <a
+            href="https://www.instagram.com/harmansinghgill13"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaInstagram size={24} className="text-pink-500 hover:text-pink-600" />
+          </a>
+          <a
+            href="https://www.youtube.com/@sikandersinghyt"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaYoutube size={24} className="text-red-600 hover:text-red-700" />
+          </a>
+          <a
+            href="www.linkedin.com/in/harman-singh-19387328b"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedin size={24} className="text-blue-500 hover:text-blue-600" />
+          </a>
+        </div>
 
         <div className="flex flex-1 items-center justify-end sm:hidden">
           <img
@@ -110,6 +137,31 @@ const Navbar = () => {
                   <a href={`#${nav.id}`}>{nav.title}</a>
                 </li>
               ))}
+
+              {/* Social links - Mobile */}
+              <li className="flex gap-3 mt-2">
+                <a
+                  href="https://www.instagram.com/YOUR_USERNAME"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaInstagram size={20} className="text-pink-500 hover:text-pink-600" />
+                </a>
+                <a
+                  href="https://www.youtube.com/YOUR_CHANNEL"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaYoutube size={20} className="text-red-600 hover:text-red-700" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/YOUR_PROFILE"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaLinkedin size={20} className="text-blue-500 hover:text-blue-600" />
+                </a>
+              </li>
             </ul>
           </div>
         </div>
